@@ -36,13 +36,12 @@ Installation
 
 Ensure you have Node.js installed on your system.
 
-# 1. Open a terminal or command prompt.
+1.  Open a terminal or command prompt.
+2.  Navigate to your project directory.
 
-# 2. Navigate to your project directory.
+3 Run the following command:
 
-# 3 Run the following command:
-
-# npm install african-currency-to-crypto-conversion
+npm install african-currency-to-crypto-conversion
 
 # Usage
 
@@ -72,15 +71,15 @@ console.error(error);
 
 convert();
 
-# The convertCurrency function takes an object as an argument with the following properties:
+The convertCurrency function takes an object as an argument with the following properties:
 
-# currency: The source African currency code (e.g., "NGN").
+currency: The source African currency code (e.g., "NGN").
 
-# coin: The target cryptocurrency code (e.g., "BTC").
+coin: The target cryptocurrency code (e.g., "BTC").
 
-# amount: The amount to convert from the African currency to the cryptocurrency.
+amount: The amount to convert from the African currency to the cryptocurrency.
 
-# The function returns a Promise that resolves to the converted amount in the target cryptocurrency.
+The function returns a Promise that resolves to the converted amount in the target cryptocurrency.
 
 # Conclusion
 
