@@ -8,47 +8,71 @@ The African Currency to Cryptocurrency Conversion Package is a library that allo
 
 # Features
 
-Fetch exchange rates: Retrieve the latest exchange rates between African currencies and cryptocurrencies.
-Perform conversions: Convert African currency amounts to their equivalent values in cryptocurrencies.
-Supported African currencies: The package supports the following African currencies:
-NGN (Nigerian Naira)
-GHS (Ghanaian Cedi)
-ZAR (South African Rand)
-KES (Kenyan Shilling)
-TZS (Tanzanian Shilling)
-ETB (Ethiopian Birr)
-ZWL (Zimbabwean Dollar)
-CFA (West African CFA Franc)
-BWP (Botswana Pula)
-RWF (Rwandan Franc)
-EGP (Egyptian Pound)
-Supported cryptocurrencies: The package supports the following cryptocurrencies:
-BTC (Bitcoin)
-ETH (Ethereum)
-BNB (Binance Coin)
-XRP (Ripple)
-LTC (Litecoin)
-DOT (Polkadot)
-LINK (Chainlink)
-Installation
+### Fetch exchange rates: Retrieve the latest exchange rates between African currencies and cryptocurrencies.
 
-# To install the African Currency to Cryptocurrency Conversion Package, follow these steps:
+### Perform conversions: Convert African currency amounts to their equivalent values in cryptocurrencies.
+
+### Supported African currencies: The package supports the following African currencies:
+
+### NGN (Nigerian Naira)
+
+### GHS (Ghanaian Cedi)
+
+### ZAR (South African Rand)
+
+### KES (Kenyan Shilling)
+
+### TZS (Tanzanian Shilling)
+
+### ETB (Ethiopian Birr)
+
+### ZWL (Zimbabwean Dollar)
+
+### CFA (West African CFA Franc)
+
+### BWP (Botswana Pula)
+
+### RWF (Rwandan Franc)
+
+### EGP (Egyptian Pound)
+
+### Supported cryptocurrencies: The package supports the following cryptocurrencies:
+
+### BTC (Bitcoin)
+
+### ETH (Ethereum)
+
+### BNB (Binance Coin)
+
+### XRP (Ripple)
+
+### LTC (Litecoin)
+
+### DOT (Polkadot)
+
+### LINK (Chainlink)
+
+## Installation
+
+## To install the African Currency to Cryptocurrency Conversion Package, follow these steps:
 
 Ensure you have Node.js installed on your system.
 
-1.  Open a terminal or command prompt.
-2.  Navigate to your project directory.
+### 1. Open a terminal or command prompt.
+
+### 2. Navigate to your project directory.
 
 3 Run the following command:
 
 npm install african-currency-to-crypto-conversion
 
-# Usage
+## Usage
 
 To use the African Currency to Cryptocurrency Conversion Package in your project, follow these steps:
 
 # Import the package into your code:
 
+```javascript
 const { convertCurrency } = require("african-currency-to-crypto-conversion");
 Perform a currency conversion:
 
@@ -70,16 +94,17 @@ console.error(error);
 };
 
 convert();
+```
 
-The convertCurrency function takes an object as an argument with the following properties:
+### The convertCurrency function takes an object as an argument with the following properties:
 
-currency: The source African currency code (e.g., "NGN").
+### currency: The source African currency code (e.g., "NGN").
 
-coin: The target cryptocurrency code (e.g., "BTC").
+### coin: The target cryptocurrency code (e.g., "BTC").
 
-amount: The amount to convert from the African currency to the cryptocurrency.
+### amount: The amount to convert from the African currency to the cryptocurrency.
 
-The function returns a Promise that resolves to the converted amount in the target cryptocurrency.
+### The function returns a Promise that resolves to the converted amount in the target cryptocurrency.
 
 # Conclusion
 
