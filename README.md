@@ -10,7 +10,7 @@ The African Currency to Cryptocurrency Conversion Package is a library that allo
 
 ### Fetch exchange rates: Retrieve the latest exchange rates between African currencies and cryptocurrencies.
 
-### Perform conversions: Convert African currency amounts to their equivalent values in cryptocurrencies.
+#### Perform conversions: Convert African currency amounts to their equivalent values in cryptocurrencies.
 
 ### Supported African currencies: The package supports the following African currencies:
 
@@ -18,39 +18,39 @@ The African Currency to Cryptocurrency Conversion Package is a library that allo
 
 ### GHS (Ghanaian Cedi)
 
-### ZAR (South African Rand)
+#### ZAR (South African Rand)
 
-### KES (Kenyan Shilling)
+#### KES (Kenyan Shilling)
 
-### TZS (Tanzanian Shilling)
+#### TZS (Tanzanian Shilling)
 
-### ETB (Ethiopian Birr)
+#### ETB (Ethiopian Birr)
 
-### ZWL (Zimbabwean Dollar)
+#### ZWL (Zimbabwean Dollar)
 
-### CFA (West African CFA Franc)
+#### CFA (West African CFA Franc)
 
-### BWP (Botswana Pula)
+#### BWP (Botswana Pula)
 
-### RWF (Rwandan Franc)
+#### RWF (Rwandan Franc)
 
-### EGP (Egyptian Pound)
+#### EGP (Egyptian Pound)
 
-### Supported cryptocurrencies: The package supports the following cryptocurrencies:
+#### Supported cryptocurrencies: The package supports the following cryptocurrencies:
 
-### BTC (Bitcoin)
+#### BTC (Bitcoin)
 
-### ETH (Ethereum)
+#### ETH (Ethereum)
 
-### BNB (Binance Coin)
+#### BNB (Binance Coin)
 
-### XRP (Ripple)
+#### XRP (Ripple)
 
-### LTC (Litecoin)
+#### LTC (Litecoin)
 
-### DOT (Polkadot)
+#### DOT (Polkadot)
 
-### LINK (Chainlink)
+#### LINK (Chainlink)
 
 ## Installation
 
@@ -62,10 +62,12 @@ Ensure you have Node.js installed on your system.
 
 ### 2. Navigate to your project directory.
 
-### 3 Run the following command:
+### 3. Run the following command:
 
 ```bash
+
 npm install african-currency-to-crypto-conversion
+
 ```
 
 ## Usage
@@ -86,16 +88,12 @@ currency: "NGN",
 coin: "BTC",
 amount: 10000,
 });
-
-
-
 } catch (error) {
-
 }
-
 };
 
 convert();
+
 ```
 
 ### The convertCurrency function takes an object as an argument with the following properties:
