@@ -62,9 +62,11 @@ Ensure you have Node.js installed on your system.
 
 ### 2. Navigate to your project directory.
 
-3 Run the following command:
+### 3 Run the following command:
 
+```bash
 npm install african-currency-to-crypto-conversion
+```
 
 ## Usage
 
