@@ -22,11 +22,7 @@ function convertToLocalCurrenciesEquivalentToDollar(exchangeRates, amount) {
 function writeEquivalentToJSON(exchangeRates) {
   fs.writeFile(filePath, JSON.stringify(exchangeRates), (err) => {
     if (err) {
-      console.error("Error writing converted amounts to file:", err);
     } else {
-      console.log(
-        "Converted amounts have been written to convertedAmounts.json"
-      );
     }
   });
 }
@@ -49,7 +45,6 @@ function readEquivalentFromJson() {
 async function getEquivalentsFromJSONFileAndCalculateEquivalent(
   conversionAmount
 ) {
-  console.log(conversionAmount);
   let calculatedEquivalent;
 
   return readEquivalentFromJson()
@@ -60,13 +55,12 @@ async function getEquivalentsFromJSONFileAndCalculateEquivalent(
         retrievedConvertedAmounts,
         conversionAmount
       );
-      console.log(calculatedEquivalent);
+
       return calculatedEquivalent;
     })
 
     .catch((error) => {
       // Handle error
-      console.error(error);
     });
 
   //   return calculatedEquivalent;
@@ -86,15 +80,7 @@ const currencies = [
   "EGP",
 ];
 
-const coins = [
-   "btc",
-  "eth",
-  "bnb",
-  "xrp",
-  "ltc",
-  "dot", 
-"link"
-]
+const coins = ["btc", "eth", "bnb", "xrp", "ltc", "dot", "link"];
 
 function isCurrencyAllowed(currency) {
   if (!currencies.includes(currency)) {
@@ -105,8 +91,7 @@ function isCurrencyAllowed(currency) {
 
 function isCoinAllowed(coin) {
   if (!coins.includes(coin)) {
-    
-     return false;
+    return false;
   }
   return true;
 }
@@ -117,5 +102,5 @@ module.exports = {
   convertToLocalCurrenciesEquivalentToDollar,
   writeEquivalentToJSON,
   readEquivalentFromJson,
-  isCoinAllowed
+  isCoinAllowed,
 };

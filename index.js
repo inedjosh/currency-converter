@@ -40,9 +40,10 @@ cron.schedule(`*/${intervalDuration} * * * *`, getExchnageRate);
 async function convertCurrency({ currency, coin, amount }) {
   let calculatedEquivalent;
 
+  const coinToLower = coin.toLowerCase();
   //check if currecy supplied is in the list of currencies
   const currencyIsAllowed = isCurrencyAllowed(currency);
-  const coinIsAllowed = isCoinAllowed(coin);
+  const coinIsAllowed = isCoinAllowed(coinToLower);
 
   if (!currencyIsAllowed) {
     return "Please choose available currencies only";
@@ -59,9 +60,9 @@ async function convertCurrency({ currency, coin, amount }) {
 
   try {
     // get the USD equivalent of the coin supplied
-    const response = await getCoinPrice(coin);
-    console.log(response);
-    const conversionRate = response[coin];
+    const response = await getCoinPrice(coinToLower);
+
+    const conversionRate = response[coinToLower];
     const convertedAmount = calculatedEquivalent[currency] * conversionRate;
 
     return { amount: convertedAmount };

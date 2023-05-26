@@ -87,10 +87,10 @@ coin: "BTC",
 amount: 10000,
 });
 
-console.log(res);
+
 
 } catch (error) {
-console.error(error);
+
 }
 
 };
