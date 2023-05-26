@@ -1,0 +1,28 @@
+{
+  "name": "african-currency-to-crypto-conversion",
+  "version": "1.0.0",
+  "description": "Convert african currencies to their equivalent amount in crypto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inedjosh/currency-converter.git"
+  },
+  "keywords": [
+    "crypto",
+    "converter",
+    "currency"
+  ],
+  "author": "Inedu Joshua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inedjosh/currency-converter/issues"
+  },
+  "homepage": "https://github.com/inedjosh/currency-converter#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "node-cron": "^3.0.2"
+  }
+}
