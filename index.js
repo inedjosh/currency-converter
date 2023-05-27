@@ -6,6 +6,7 @@ const {
   isCurrencyAllowed,
   writeEquivalentToJSON,
   isCoinAllowed,
+  errorResponse,
 } = require("./utils");
 
 // Calculate the interval duration in minutes
@@ -46,11 +47,11 @@ async function convertCurrency({ currency, coin, amount }) {
   const coinIsAllowed = isCoinAllowed(coinToLower);
 
   if (!currencyIsAllowed) {
-    return "Please choose available currencies only";
+    errorResponse("Please choose available currencies only");
   }
 
   if (!coinIsAllowed) {
-    return "Please choose available coin only";
+    errorResponse("Please choose available coin only");
   }
 
   //get the USD equivalent from json file
@@ -65,9 +66,9 @@ async function convertCurrency({ currency, coin, amount }) {
     const conversionRate = response[coinToLower];
     const convertedAmount = calculatedEquivalent[currency] * conversionRate;
 
-    return { amount: convertedAmount };
-  } catch (error) {
-    return "Error fetching currency data from CoinGecko API";
+    return { data: { amount: convertedAmount }, status: true };
+  } catch (err) {
+    errorResponse("Error fetching currency data from CoinGecko API");
   }
 }
 

@@ -96,6 +96,23 @@ function isCoinAllowed(coin) {
   return true;
 }
 
+function errorResponse(response) {
+  const error = new Error(response); // set custom error message
+  error.statusCode = 400; // Set a custom error status code or other relevant information
+
+  // Throw the error
+  throw { message: error.message, status: false, statusCode: error.statusCode };
+}
+
+function successResponse(response) {
+  console.log(response);
+  return {
+    statusCode: 200,
+    status: true,
+    data: response,
+  };
+}
+
 module.exports = {
   getEquivalentsFromJSONFileAndCalculateEquivalent,
   isCurrencyAllowed,
@@ -103,4 +120,6 @@ module.exports = {
   writeEquivalentToJSON,
   readEquivalentFromJson,
   isCoinAllowed,
+  errorResponse,
+  successResponse,
 };
