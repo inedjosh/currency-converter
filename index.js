@@ -11,11 +11,11 @@ const {
 
 // Calculate the interval duration in minutes
 const totalMinutesInDay = 24 * 60;
-const intervalDuration = Math.floor(totalMinutesInDay / 3);
+const intervalDuration = Math.floor(totalMinutesInDay / 1);
 
 let executionCounter = 0;
-async function getExchnageRate() {
-  if (executionCounter >= 5) {
+async function getExchangeRate() {
+  if (executionCounter >= 1) {
     //Maximum number of executions reached for the day
     return;
   }
@@ -35,8 +35,8 @@ async function getExchnageRate() {
   }
 }
 
-// Schedule the function to run 5 times a day with evenly spaced intervals
-cron.schedule(`*/${intervalDuration} * * * *`, getExchnageRate);
+// Schedule the function to run 1 times a day with evenly spaced intervals
+cron.schedule("0 8 * * *", getExchangeRate);
 
 async function convertCurrency({ currency, coin, amount }) {
   let calculatedEquivalent;
