@@ -10,6 +10,10 @@ The African Currency to Cryptocurrency Conversion Package is a library that allo
 
 #### Perform conversions: Convert African currency amounts to their equivalent values in cryptocurrencies.
 
+####  Get Dollar Equivalent Prices Data: This feature retrieves the prices of various African currencies and their equivalent values in dollars. It returns an object containing the prices and a status indicator.
+
+####  Get Dollar Equivalent Price for a Currency: This feature retrieves the equivalent price in dollars for a specific African currency. It accepts a currency code as a parameter and returns an object containing the price and a status indicator.
+
 #### Supported African currencies: The package supports the following African currencies:
 
 ### NGN (Nigerian Naira)
@@ -77,9 +81,20 @@ To use the African Currency to Cryptocurrency Conversion Package in your project
 # Import the package into your code:
 
 ```javascript
-const { convertCurrency } = require("african-currency-to-crypto-conversion");
-// Perform a currency conversion:
+const { convertCurrency, 
+ getDollarEquivalentsData,
+  getDollarEquivalent, } = require("african-currency-to-crypto-conversion");
 
+  //using the import module
+
+import {
+  convertCurrency,
+  getDollarEquivalentsData,
+  getDollarEquivalent,
+} from 'african-currency-crypto-conversion';
+
+
+// Perform a currency conversion:
 const convert = async () => {
   try {
     const res = await convertCurrency({
@@ -107,6 +122,95 @@ const convert = async () => {
     ***/
   }
 };
+
+convert();
+```
+
+To get  Dollar Equivalent Price for a Currency
+
+```javascript
+const {  
+  getDollarEquivalent, } = require("african-currency-to-crypto-conversion");
+
+  //using the import module
+
+import { 
+  getDollarEquivalent,
+} from 'african-currency-crypto-conversion';
+
+
+// Perform a currency conversion:
+const getPrice = async () => {
+  try {
+    const price = await getDollarEquivalent("NGN");
+    console.log(price);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//sample response
+
+// {
+//   "data": {
+//     "price": 464.5105287036787
+//   },
+//   "status": true
+// }
+
+getPrice();
+```
+
+### Parameters
+currency (String): The currency code for which you want to retrieve the equivalent price.
+
+### To get Dollar Equivalent Prices Data
+
+
+```javascript
+const { 
+ getDollarEquivalentsData,
+   } = require("african-currency-to-crypto-conversion");
+
+  //using the import module
+
+import {
+  getDollarEquivalentsData,
+} from 'african-currency-crypto-conversion';
+
+
+// Perform a currency conversion:
+const getPrices = async () => {
+  try {
+    const prices = await getDollarEquivalentsData();
+    console.log(prices);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//sample response
+
+// {
+//   "data": {
+//     "prices": {
+//       "NGN": 464.5105287036787,
+//       "GHS": 11.148273847842228,
+//       "ZAR": 19.73319520513807,
+//       "KES": 138.49673234277282,
+//       "TZS": 2364.77689191065,
+//       "ETB": 54.592450710313685,
+//       "ZWL": 321.99957424965,
+//       "BWP": 13.771257472757101,
+//       "RWF": 1126.4573853711433,
+//       "EGP": 30.9034972084006
+//     }
+//   },
+//   "status": true
+// }
+
+getPrices();
+
 
 convert();
 ```

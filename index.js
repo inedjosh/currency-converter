@@ -7,6 +7,8 @@ const {
   writeEquivalentToJSON,
   isCoinAllowed,
   errorResponse,
+  dollarEquivalentPrice,
+  dollarEquivalentPricesData,
 } = require("./utils");
 
 // Calculate the interval duration in minutes
@@ -72,4 +74,30 @@ async function convertCurrency({ currency, coin, amount }) {
   }
 }
 
-module.exports = { convertCurrency };
+async function getDollarEquivalentsData() {
+  try {
+    const pricesObj = await dollarEquivalentPricesData();
+    return { data: { prices: pricesObj }, status: true };
+  } catch (error) {
+    errorResponse(`Something went wrong ${error}`);
+  }
+}
+
+async function getDollarEquivalent(currency) {
+  if (!currency) {
+    errorResponse("Please provide a currency");
+  }
+
+  try {
+    const price = await dollarEquivalentPrice(currency);
+    return { data: { price: price }, status: true };
+  } catch (error) {
+    errorResponse(`Something went wrong ${error}`);
+  }
+}
+
+module.exports = {
+  convertCurrency,
+  getDollarEquivalentsData,
+  getDollarEquivalent,
+};

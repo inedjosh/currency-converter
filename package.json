@@ -1,6 +1,6 @@
 {
   "name": "african-currency-to-crypto-conversion",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Convert african currencies to their equivalent amount in crypto",
   "main": "index.js",
   "scripts": {

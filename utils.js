@@ -113,6 +113,70 @@ function successResponse(response) {
   };
 }
 
+function dollarEquivalentPricesData() {
+  let pricesObj;
+
+  return readEquivalentFromJson()
+    .then((prices) => {
+      // Use the retrieved converted amounts
+      const usdPrice = prices["USD"]; // Get the USD price
+
+      // Convert the prices to their equivalent in dollars
+      pricesObj = Object.fromEntries(
+        Object.entries(prices).map(([currency, price]) => [
+          currency,
+          price / usdPrice,
+        ])
+      );
+
+      // Remove the USD key from the pricesObj object
+      delete pricesObj["USD"];
+      // console.log(pricesObj);
+      return pricesObj;
+    })
+    .catch((error) => {
+      // Handle error
+      console.log(error);
+    });
+}
+async function dollarEquivalentPrice(currencyCode) {
+  const currency = currencyCode.toUpperCase();
+  const isAllowed = isCurrencyAllowed(currency);
+  let price;
+  if (!isAllowed) {
+    errorResponse("Please choose available currencies only");
+  }
+
+  return readEquivalentFromJson()
+    .then((prices) => {
+      // Use the retrieved converted amounts
+      const usdPrice = prices["USD"]; // Get the USD price
+
+      // Convert the prices to their equivalent in dollars
+      const pricesObj = Object.fromEntries(
+        Object.entries(prices).map(([currency, price]) => [
+          currency,
+          price / usdPrice,
+        ])
+      );
+
+      // Remove the USD key from the pricesObj object
+      delete pricesObj["USD"];
+
+      if (pricesObj.hasOwnProperty(currency)) {
+        price = pricesObj[currency];
+        // console.log(price);
+      } else {
+        errorResponse("Something went wrong, try again");
+      }
+      return price;
+    })
+    .catch((error) => {
+      // Handle error
+      console.log(error);
+    });
+}
+
 module.exports = {
   getEquivalentsFromJSONFileAndCalculateEquivalent,
   isCurrencyAllowed,
@@ -122,4 +186,6 @@ module.exports = {
   isCoinAllowed,
   errorResponse,
   successResponse,
+  dollarEquivalentPricesData,
+  dollarEquivalentPrice,
 };
